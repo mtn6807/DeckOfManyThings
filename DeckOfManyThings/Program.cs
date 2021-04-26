@@ -14,9 +14,9 @@ namespace DeckOfManyThings
     public class Program
     {
 
-        public static Dictionary<string, Dealer> activeGames = new Dictionary<string, Dealer>
+        public static Dictionary<string, Casino> activeGames = new Dictionary<string, Casino>
         {
-            { "mainDeck",new Dealer() }
+            { "casino",new Casino() }
         };
 
         public static void Main(string[] args)

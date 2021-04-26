@@ -2,10 +2,21 @@
     ViewData["Title"] = "Home Page";
 }
 
-<h1>Cards Left: @ViewBag.DeckSize</h1>
-
+<h1>@ViewBag.User</h1>
+<h2>@ViewBag.numActive Active Users </h2>
+<br />
+@{
+    var tables = ViewBag.Tables;
+    if (tables != null)
+    {
+        foreach (string id in tables)
+        {
+            <a href="/game/@id">Table @id</a>
+            <br />
+        }
+    }
+}
 
 <br />
-<p class="message">
-    @Html.Raw("<p>" + ViewBag.WholeDeck + "</p>")
-</p>
+<form action="/game/create" method="post" id="nameform" />
+<button type="submit" form="nameform" value="Submit">Start Game!</button>

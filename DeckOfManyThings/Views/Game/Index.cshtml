@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>@ViewBag.User</h1>
+<h2>Cards Left: @ViewBag.DeckSize</h2>
+
+<br />
+@{
+    var hand = ViewBag.Hand;
+    if (hand != null)
+    {
+        foreach (Card card in hand)
+        {
+            <span>@card.toString(), </span>
+        }
+    }
+
+}
+
+<br />
+
+<form action="/game/draw" method="post" id="draw">
+    <label for="numofcards">Number Of Cards:</label>
+    <input type="number" id="numofcards" name="numofcards">
+</form>
+<button type="submit" form="draw" value="Submit">Draw</button>
+
+<form action ="/game/shuffle" method="post" id="shuffle"></form>
+<button type="submit" form="shuffle" value="Submit">Shuffle</button>
+
+<form action ="/game/quit" method="post" id="quit"></form>
+<button type="submit" form="quit" value="Submit">Quit</button>

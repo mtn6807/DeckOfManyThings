@@ -1,18 +1,23 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace DeckOfManyThings.Models
 {
-    public class Hand
+    public class Player
     {
         private ArrayList hand;
-        public Hand()
+        private String name;
+
+        public Player(string username)
         {
+            name = username;
             hand = new ArrayList();
         }
+
+        public string getName() { return name; }
 
         public void addToHand(Card card)
         {

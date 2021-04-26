@@ -70,7 +70,7 @@ namespace DeckOfManyThings.Models
          * draw one card of the top of the deck.
          * @return a drawn card.
         */
-        public Card draw()
+        private Card draw()
         {
             if (deck.Count() < 1)
             {
