@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace DeckOfManyThings.Models
 {
-
+    /*
+     * A class representing a card.
+     */
     public class Card
     {
         /*
@@ -36,23 +38,31 @@ namespace DeckOfManyThings.Models
         */
         public Card(int value, Suit suit)
         {
+            // checks if the value is withing the correct range.
             if(value>=LOWEST_CARD_VALUE && value <= ACE)
             {
+                // if it's in the right value it sets the fields
                 cardValue = value;
                 cardSuit = suit;
             }
             else
             {
+                // if it's not throw an exception
                 throw new ArgumentException("card value must be between in range 1-14");
             }
         }
 
         /*
          * to string method for a Card.
+         * 
+         * @return a string representing a card.
         */
         public string toString()
         {
+            // builds a string 
             String temp = "";
+
+            // adds the card value to the string.
             switch (this.cardValue)
             {
                 case JACK:
@@ -72,6 +82,7 @@ namespace DeckOfManyThings.Models
                     break;
             }
 
+            // adds the suit to the string.
             switch (this.cardSuit)
             {
                 case Suit.Spade:
@@ -93,6 +104,8 @@ namespace DeckOfManyThings.Models
 
         /*
          * overriden equals method for the Card object.
+         * 
+         * @return a boolean checking if two objects are equal.
         */
         public override bool Equals(object obj)
         {
