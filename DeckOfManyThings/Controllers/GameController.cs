@@ -25,6 +25,7 @@ namespace DeckOfManyThings.Controllers
         {
             // Pull user from cookie
             String user = Request.Cookies["name"];
+            Console.WriteLine(user);
 
             // Grabs casino from application and gets table from casino
             Casino casino = Program.activeGames["casino"];

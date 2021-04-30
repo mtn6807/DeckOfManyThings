@@ -2,6 +2,17 @@
     ViewData["Title"] = "Home Page";
 }
 
+<script>
+    window.setInterval('refresh()', 10000);
+    // Call a function every 10000 milliseconds
+    // (OR 10 seconds).
+
+    // Refresh or reload page.
+    function refresh() {
+        window .location.reload();
+    }
+</script>
+
 <h1>@ViewBag.User</h1>
 <h2>@ViewBag.numActive Active Users </h2>
 <br />
